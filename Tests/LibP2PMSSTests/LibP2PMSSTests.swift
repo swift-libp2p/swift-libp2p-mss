@@ -6,6 +6,5 @@ final class LibP2PMSSTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(LibP2PMSS().text, "Hello, World!")
     }
 }
