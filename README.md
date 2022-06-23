@@ -66,7 +66,7 @@ TODO
 import LibP2PMSS
 
 /// When you configure your app
-app.transportUpgrader.use(.mss)
+app.transportUpgraders.use(.mss)
 
 ```
 
