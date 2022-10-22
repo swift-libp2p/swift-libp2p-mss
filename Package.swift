@@ -22,10 +22,10 @@ let package = Package(
         .package(url: "https://github.com/swift-libp2p/swift-libp2p.git", .upToNextMajor(from: "0.1.0")),
         
         // NIO Extras
-        .package(url: "https://github.com/apple/swift-nio-extras.git", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-nio-extras.git", .upToNextMajor(from: "1.0.0")),
         
         // SwiftState for state machines
-        .package(url: "https://github.com/ReactKit/SwiftState.git", from: "6.0.0"),
+        .package(url: "https://github.com/ReactKit/SwiftState.git", .upToNextMajor(from: "6.0.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
