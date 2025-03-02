@@ -13,6 +13,7 @@
 //===----------------------------------------------------------------------===//
 
 import XCTest
+
 @testable import LibP2PMSS
 
 final class LibP2PMSSTests: XCTestCase {
