@@ -15,7 +15,7 @@
 import LibP2P
 
 struct MSS: TransportUpgrader {
-    public static var key: String = "/multistream/1.0.0"
+    public static let key: String = "/multistream/1.0.0"
 
     public enum UpgradeType {
         case security
@@ -35,7 +35,6 @@ struct MSS: TransportUpgrader {
         logger: Logger,
         promise: EventLoopPromise<(`protocol`: String, leftoverBytes: ByteBuffer?)>
     ) -> [ChannelHandler] {
-        //print("MSS: negotiate() -> Implement Me!")
         let mss = LightMultistreamSelectHandler(
             mode: mode,
             protocols: protocols,
