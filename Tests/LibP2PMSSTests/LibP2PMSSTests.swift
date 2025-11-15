@@ -12,14 +12,15 @@
 //
 //===----------------------------------------------------------------------===//
 
-import XCTest
+import Testing
 
 @testable import LibP2PMSS
 
-final class LibP2PMSSTests: XCTestCase {
-    func testExample() throws {
+@Suite("Libp2p MultiStreamSelect Tests")
+struct LibP2PMSSTests {
+    @Test func testExample() throws {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
+        // Use #expect(...) and related functions to verify your tests produce the correct
         // results.
     }
 }

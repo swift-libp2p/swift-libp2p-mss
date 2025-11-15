@@ -20,9 +20,9 @@ import SwiftState
 internal final class LightMultistreamSelectHandler: ChannelInboundHandler, RemovableChannelHandler {
     //TODO: Have this be of type `Message` or `DecryptedMessage` (uvarint length prefixed, newline delimited, utf8 bytebuffer)
     public typealias InboundIn = ByteBuffer
-    // We only pass along buffered data...
+    // InboundOut only passes along buffered data...
     public typealias InboundOut = ByteBuffer
-    //Protocol Selection
+    //OutboundOut is the Protocol Selection
     public typealias OutboundOut = ByteBuffer
 
     /// Wether we are listening or initiating the mss negotiation (dialers are expected to initiate the negotiation, listeners / hosts are expected to listen / reply)

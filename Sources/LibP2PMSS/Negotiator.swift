@@ -27,12 +27,6 @@ internal final class Negotiator {
         //case partialRead
     }
 
-    //    internal struct Response2 {
-    //        let response:Bytes?
-    //        let negotiatedProtocol:String?
-    //        let leftoverBytes:Bytes?
-    //    }
-
     internal enum Errors: Error {
         case failedToParseMSSMessage
         case redundantMSSCodec
@@ -57,7 +51,7 @@ internal final class Negotiator {
     private let multistreamSelectCodecID: Bytes = "/multistream/1.0.0".bytes
     private let multistreamSelectNA: Bytes = "na".bytes
     private let multistreamSelectLS: Bytes = "ls".bytes
-    //    private let newLine:UInt8 = 0x0a
+    private let newLine: UInt8 = 0x0a
 
     private var logger: Logger
     private var compact: Bool = false
@@ -68,7 +62,6 @@ internal final class Negotiator {
         state
     }
 
-    //public init(mode:LibP2P.Mode, handledProtocols:[String], loggerID:String = "") {
     public init(mode: LibP2P.Mode, handledProtocols: [String], logger: Logger) {
         self.mode = mode
         self.state = .initialized
@@ -306,7 +299,7 @@ internal final class Negotiator {
         }
         //print(r.bytesRead)
         //print(r.value)
-        guard bytes[ei] == 0x0a else {
+        guard bytes[ei] == self.newLine else {
             //print("Error: MSS message isn't new line delimited")
             return nil
         }
@@ -319,7 +312,7 @@ internal final class Negotiator {
         //print("encode")
         putUVarInt(UInt64(bytes.count + 1))  // uVarInt Length Prefix
             + bytes  // mssMessage
-            + [0x0a]  // NewLine Char '\n'
+            + [self.newLine]  // NewLine Char '\n'
         // NewLine Char '\n'
     }
 
